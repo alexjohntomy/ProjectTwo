@@ -1,0 +1,84 @@
+body {
+    background-color: black;
+    text-align: center;
+}
+
+h1 {
+    font-family: monospace;
+    font-size: .5em;
+    color: lime;
+
+}
+
+input {
+    background-color: black;
+    color: lime;
+    box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.1);
+    border: .05em solid white;
+    border-radius: 5px;
+    padding: 8px;
+    margin: auto;
+    margin-top: 20px;
+    margin-right: 10px;
+
+
+}
+
+button {
+    background-color: black;
+    color: lime;
+    box-shadow: 0 0 30px 1px rgb(62, 91, 17);
+    border: .15em solid lime;
+    border-radius: 2px 2px 2px 2px;
+    font-family: monospace;
+    padding: .5em;
+}
+
+button {
+    transition-duration: 0.1s;
+  }
+  
+  button:hover {
+    background-color: lime;
+    color: black;
+
+  }
+
+
+h3 {
+    font-family: monospace;
+    background-color: black;
+    color: lime;
+    box-shadow: 0 0 30px 1px rgba(0, 255, 0, 0.1);
+    border: .15em dotted lime;
+    border-radius: 10px 10px 10px 1px;
+    font-size: 1em;
+    width: 20em;
+    text-align: left;
+    padding: 10px;
+    padding-left:12px;
+    margin: auto;
+    margin-top: 20px;
+
+}
+
+h2 {
+    font-family: monospace;
+    background-color: black;
+    color: grey;
+    box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.1);
+    border: .15em dotted grey;
+    border-radius: 10px 10px 1px 10px;
+    font-size: 1em;
+    width: 20em;
+    padding: 10px;
+    padding-right: 12px;
+    text-align: right;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#last {
+    opacity:0;
+    transition-duration: 2s;
+}

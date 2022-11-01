@@ -1,6 +1,7 @@
 body {
     background-color: black;
     text-align: center;
+    margin-left:-30px;
 }
 
 h1 {
@@ -80,9 +81,9 @@ h3 {
 h2 {
     font-family: monospace;
     background-color: black;
-    color: grey;
+    color: rgb(200, 200, 200);
     box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.1);
-    border: .15em dotted grey;
+    border: .15em dotted  rgb(145, 145, 145);
     border-radius: 10px 10px 1px 10px;
     font-size: 1em;
     width: 80%;
@@ -92,7 +93,11 @@ h2 {
     margin-top: 20px;
 }
 
-#last {
+/*
+
+#Messages {
     opacity:0;
     transition-duration: 2s;
 }
+
+*/

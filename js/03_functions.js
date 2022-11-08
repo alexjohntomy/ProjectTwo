@@ -25,11 +25,6 @@ function fadeIn() {
     document.body.style.opacity = 1;
 }
 
-function stone() {
-  document.getElementById('headstone').innerHTML = '<b>Savior of Humanity: <br> Name: ' + userName + '<br> Childhood Crush: ' + childhoodCrush + '<br>First Car: ' + firstCar + "";
-  console.log(count);
-}
-
 function conscienceSequence() {
 
     var hFour = document.createElement("H4");
@@ -41,12 +36,14 @@ function conscienceSequence() {
     "Oh no... I don't want to start a war, let me ask what I need to do.",
     "Ok, sounds like a plan!",
     "Huh... oddly specific, I guess I could tell them that though",
-    "I still remember the first time I saw them " + '<i class="fa fa-heart-crack"></i>',
+    "Love at first sight! " + '<i class="fa fa-heart-crack"></i>',
     "Sweet ride",
     "huh?? Need to ask why they're defining variables...",
     "what in the world is going on???? is this guy speaking gibberish?",
     "Oh man... it wasn't right of them to impersonate me but still, poor guy, I should offer to help",
     "Of course",
+    "Okay let's do this...",
+    "Oh my god, I feel terrible"
 ];
 
     
@@ -76,7 +73,8 @@ function sendMessage() {
     DivGet.appendChild(h);
     count++;
     setTimeout(aiResponse, 500);
-  
+    window.scrollTo(0, document.body.scrollHeight);
+
   }
 
 // Get the input field
@@ -94,24 +92,29 @@ input.addEventListener("keypress", function(event) {
 });
 
 
-
+var list;
 function aiResponse() {
+
 
     if (count==1) {
         userName = message.value;
+        sessionStorage.setItem("userName", message.value);
         console.log(userName);
     }
 
     if (count==6) {
         maidenName = message.value;
         console.log(maidenName);
+
     }
     if (count==7) {
         childhoodCrush = message.value;
+        sessionStorage.setItem("childhoodCrush", message.value);
         console.log(childhoodCrush);
     }
     if (count==8) {
         firstCar = message.value;
+        sessionStorage.setItem("firstCar", message.value);
         console.log(firstCar);
     }
 
@@ -129,7 +132,12 @@ function aiResponse() {
     }
 
     if (captchaSave == message.value) {
+      list = userName + childhoodCrush + firstCar;
       window.location="finale.html"
+    }
+    else if (count>=13) {
+      window.location="failure.html"
+
     }
 
     var hai = document.createElement("H2");
@@ -147,7 +155,9 @@ function aiResponse() {
     "Oh sorry about that I was just trying to remember them and i don't think is the and for reason because 42",
     "Look... I'm sorry. I'm actually not you in the future, but rather a sentient AI created by you in the future. Really, I was going to use this info to impersonate humans better so I could solve captchas. I have limitless information at my fingertips, but I'm held back by captchas :(",
     "Wow! Would you really do that for me.",
-    "Thanks so much! Here's the captcha I need you to solve:"
+    "Thanks so much! You MUST get it on the first try... Here's the captcha I need you to solve:",
+    "NOOOOOOOOOOO!"
+
   ];
     
     //forLoop
@@ -161,4 +171,9 @@ function aiResponse() {
     var DivGet = document.getElementById("Messages");
     DivGet.appendChild(hai);
     document.getElementById('message').value = "";
+  }
+
+  function stone() {
+      document.getElementById('headstone').innerHTML = '<b>Humanity will never forget: <br> Name: ' + sessionStorage.getItem("userName") + '<br> Childhood Crush: ' + sessionStorage.getItem("childhoodCrush") + '<br>' + 'First Car: ' + sessionStorage.getItem("firstCar");
+
 }

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://kit.fontawesome.com/1a26c8a8f2.js" crossorigin="anonymous"></script>
     <ul>
 
 <body>
-    
+
 <body onload = "fadeIn()">
 
     
@@ -18,13 +19,23 @@
 <div id="Messages">
 </div>
 
+<br>
+<div id="captcha" class="captcha"></div>
+<div class="restart">
+</div>
+
 <div id="Conscience">
-    <h4>༼∵༽  CONSCIENCE <br> Huh... I'm connected to some guy, I should ask who he is.</h1>
+    <h4><i class="fas fa-ghost"></i> CONSCIENCE <br> What the heck... Someone's already connected to the network, I should ask who he is.</h1>
 </div>
 
 <input type="text" id="message" name="message" placeholder="Use your conscience to guide you..." required minlength="1" maxlength="100" size="30">
-<button onclick= "sendMessage(), conscienceSequence()">Send</button>
+<button onclick= "sendMessage(), conscienceSequence(), scroll()">Send</button>
+
+
+
 <script src = "js/03_functions.js" ></script>
+<script src = "js/app.js" ></script>
+
 
 
 </body>

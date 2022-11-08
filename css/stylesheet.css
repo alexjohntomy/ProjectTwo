@@ -46,7 +46,7 @@ button {
     border: .15em solid lime;
     border-radius: 2px 2px 2px 2px;
     font-family: monospace;
-    width:13%;
+    width:15%;
     padding: 1em;
 }
 
@@ -114,3 +114,44 @@ body {
     opacity:0;
     transition: 3s ease-out;
 }
+
+/*Captcha*/ 
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .box {
+    background-color: #f1f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .captcha {
+    font-family: cursive;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 3px;
+    border-radius: 5px;
+    text-decoration: line-through;
+    color: lime;
+    display:none;
+  }
+  
+  .restart a {
+    text-decoration: none;
+  }
+  
+  .errmsg {
+    color: black;
+    padding: 5px;
+    transition: 0.5s ease;
+  }
+  

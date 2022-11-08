@@ -9,14 +9,21 @@
     <ul>
 
 <body>
+    
+<body onload = "fadeIn()">
 
+    
 <h1>CONNECTED TO 132.320.320 // 41.717660,-87.605230</h1>
+
 <div id="Messages">
 </div>
 
-<input type="text" id="message" name="message" required minlength="1" maxlength="100" size="30">
-<button onclick= "sendMessage()">Send</button>
+<div id="Conscience">
+    <h4>༼∵༽  CONSCIENCE <br> Huh... I'm connected to some guy, I should ask who he is.</h1>
+</div>
 
+<input type="text" id="message" name="message" placeholder="Use your conscience to guide you..." required minlength="1" maxlength="100" size="30">
+<button onclick= "sendMessage(), conscienceSequence()">Send</button>
 <script src = "js/03_functions.js" ></script>
 
 

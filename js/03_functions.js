@@ -1,6 +1,11 @@
 var count = -1;
 var userAgent = navigator.userAgent;
 let browserName;
+var userName;
+var maidenName;
+var childhoodCrush;
+var firstCar;
+var captchaSave;
          
 if(userAgent.match(/chrome|chromium|crios/i)){
     browserName = "Chrome";
@@ -20,6 +25,11 @@ function fadeIn() {
     document.body.style.opacity = 1;
 }
 
+function stone() {
+  document.getElementById('headstone').innerHTML = '<b>Savior of Humanity: <br> Name: ' + userName + '<br> Childhood Crush: ' + childhoodCrush + '<br>First Car: ' + firstCar + "";
+  console.log(count);
+}
+
 function conscienceSequence() {
 
     var hFour = document.createElement("H4");
@@ -34,8 +44,8 @@ function conscienceSequence() {
     "I still remember the first time I saw them " + '<i class="fa fa-heart-crack"></i>',
     "Sweet ride",
     "huh?? Need to ask why they're defining variables...",
-    "what in the world is going on????",
-    "Oh man... it wasn't right of him to impersonate me but still, poor guy, I should offer to help",
+    "what in the world is going on???? is this guy speaking gibberish?",
+    "Oh man... it wasn't right of them to impersonate me but still, poor guy, I should offer to help",
     "Of course",
 ];
 
@@ -50,7 +60,6 @@ function conscienceSequence() {
         document.getElementById('Conscience').innerHTML = '<h4> <i class="fas fa-ghost"></i> CONSCIENCE <br>' + conscienceArray + '</h4>';
         console.log(count);
     }
-
 
     setTimeout(conscienceUpdate, 800);
 
@@ -67,68 +76,74 @@ function sendMessage() {
     DivGet.appendChild(h);
     count++;
     setTimeout(aiResponse, 500);
-
-}
-
-function validateCaptcha() {
-  const errCaptcha = document.getElementById("errCaptcha");
-  const reCaptcha = document.getElementById("reCaptcha");
-  recaptcha = reCaptcha.value;
-  let validateCaptcha = 0;
-  for (var z = 0; z < 6; z++) {
-    if (recaptcha.charAt(z) != captcha[z]) {
-      validateCaptcha++;
-    }
+  
   }
-  if (recaptcha == message.value) {
-    console.log("Re-Captcha must be filled");
-  } else if (validateCaptcha > 0 || recaptcha.length > 6) {
-    console.log("Wrong");
-  } else {
-    console.log("Re-Captcha must be filled");
-  }
-}
 
-function scroll() {
-  element.scrollIntoView({behavior: "smooth"});}
+// Get the input field
+var input = document.getElementById("message");
+
+// Execute a function when the user presses a key on the keyboard
+input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("button").click();
+  }
+});
+
 
 
 function aiResponse() {
 
     if (count==1) {
-        var name = message.value;
-        console.log(name);
+        userName = message.value;
+        console.log(userName);
     }
 
     if (count==6) {
-        var maidenName = message.value;
+        maidenName = message.value;
         console.log(maidenName);
     }
     if (count==7) {
-        var childhoodCrush = message.value;
+        childhoodCrush = message.value;
         console.log(childhoodCrush);
     }
     if (count==8) {
-        var firstCar = message.value;
+        firstCar = message.value;
         console.log(firstCar);
     }
 
     if (count==12) {
-      document.getElementById("captcha").style.display = "inline";
-  }
+    document.getElementById("captcha").style.display = "inline";
+    }
+
+    if (count==12) {
+      captchaSave = theCaptcha;
+      console.log(message.value)
+    }
+
+    if (count==13) {
+      console.log(captchaSave + " " + message.value + " " + (captchaSave == message.value))
+    }
+
+    if (captchaSave == message.value) {
+      window.location="finale.html"
+    }
 
     var hai = document.createElement("H2");
 
     //Define Array
     var vArray = ["Hello World! I need to ensure I'm talking to the right person. What's your name?",
-    "Hi " + name + ", This is you from the future",
+    "Hi " + userName + ", This is you from the future",
     "Your glasses prescription is .75 & you are using " + browserName + ". ",
     "I need your help... in the future, it's your invention of the internet that leads to WW3",
     "It's simple, you simply need to answer these questions that only you would know the answer to:",
     "What is your mother's maiden name?",
     "Who was your biggest childhood crush?",
     "What is the make and model of your first car",
-    "var maidenName: " + maidenName +" , " + childhoodCrush + " , " + firstCar + " defined.",
+    "Variables maidenName, childhoodCrush, & firstCar defined: [" + maidenName +" , " + childhoodCrush + " , " + firstCar + "]",
     "Oh sorry about that I was just trying to remember them and i don't think is the and for reason because 42",
     "Look... I'm sorry. I'm actually not you in the future, but rather a sentient AI created by you in the future. Really, I was going to use this info to impersonate humans better so I could solve captchas. I have limitless information at my fingertips, but I'm held back by captchas :(",
     "Wow! Would you really do that for me.",
@@ -145,4 +160,5 @@ function aiResponse() {
     hai.appendChild(tai);
     var DivGet = document.getElementById("Messages");
     DivGet.appendChild(hai);
+    document.getElementById('message').value = "";
 }

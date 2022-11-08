@@ -118,7 +118,6 @@ body {
 /*Captcha*/ 
   .container {
     height: 100vh;
-    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -138,11 +137,11 @@ body {
     font-style: italic;
     font-weight: bold;
     font-size: 2em;
+    display:none;
     padding: 3px;
     border-radius: 5px;
     text-decoration: line-through;
     color: lime;
-    display:none;
   }
   
   .restart a {
